@@ -8,6 +8,7 @@ void main() {
     expect(sOne.play("basic"),true);
     expect(sOne.play("c"),true);
     expect(sOne.play("cpp"),true);
+    expect(sOne.play(""), false);
     expect(sOne.play("python"),true);
     expect(sOne.play("cpp"),false); //duplicate entry
     expect(sOne.game_over, true);
