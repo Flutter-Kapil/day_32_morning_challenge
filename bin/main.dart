@@ -16,4 +16,6 @@
 // - restart: a method that sets the words list to an empty one [] and sets the
 // game_over boolean to false. It should return "game restarted".
 main() {
+
+  int i = 10
 }
