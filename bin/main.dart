@@ -16,37 +16,20 @@
 // - restart: a method that sets the words list to an empty one [] and sets the
 // game_over boolean to false. It should return "game restarted".
 
-import 'dart:io';
-
 class Shiritori{
-  List<String> words=[];
-  bool game_over=true;
 
+  List <String> words = [];
+  bool game_over;
+  
   bool play(String word){
-    return !words.contains(word);
+
   }
 
-  String restart(List<String> words){
-    words.clear();
-    game_over=false;
-    return 'game restarted';
+  String restart(){
+
   }
 }
 
 main() {
-  Shiritori shiritori= Shiritori();
-  print('Game begins');
-  while(shiritori.game_over){
-    stdout.write("Enter a word");
-    var userInput = stdin.readLineSync();
-    if(shiritori.play(userInput)){
-      shiritori.words.add(userInput);
-    }else{
-      shiritori.restart(shiritori.words);
-    }
-  }
-
 
 }
-
-
