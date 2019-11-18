@@ -7,9 +7,9 @@ void main() {
     expect(sOne.play("c"),true);
     expect(sOne.play("cpp"),true);
     expect(sOne.play("python"),true);
-    expect(sOne.play("nadesico"),false);
+    expect(sOne.play("madesico"),false);
     expect(sOne.play("lua"),false);
-    expect(sOne.play("assembly"),false);
+    expect(sOne.play("assembly"),true);
     sOne.restart();
   });
 }
