@@ -3,6 +3,16 @@ import 'package:test/test.dart';
 
 void main(){
   Shiritori S = Shiritori();
+  S.words = ['basic',
+    "c",
+    'cpp',
+    'php',
+    'python',
+    'nadesico',
+    'ocaml',
+    'lua',
+    'assembly'];
+
   test("Test Case for Shiritori,play", (){
     expect(S.play('cpp'), true);
   });
