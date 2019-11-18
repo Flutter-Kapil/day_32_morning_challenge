@@ -39,6 +39,9 @@ class Shiritori {
       String lastWord = words.last;
       String lastOfPrevWord = lastWord[lastWord.length - 1];
 //      print('firstOfWord:$firstOfWord lastOfprevWord:$lastOfPrevWord');
+      if(!(firstOfWord==lastOfPrevWord)){
+        game_over=true;
+      }
       returnThis = (firstOfWord == lastOfPrevWord) && !words.contains(word);
       words.add(word);
     }
