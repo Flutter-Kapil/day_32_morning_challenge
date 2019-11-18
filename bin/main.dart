@@ -19,11 +19,13 @@
 class Shiritori{
 
   List <String> words = [];
+  bool game_over;
+  
   bool play(String word){
 
   }
 
-  String restart(List<String> words){
+  String restart(){
 
   }
 }

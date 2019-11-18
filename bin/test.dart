@@ -1,31 +1,18 @@
-import 'main.dart';
 import 'package:test/test.dart';
-
-void main(){
-  Shiritori S = Shiritori();
-  S.words = ['basic',
-    "c",
-    'cpp',
-    'php',
-    'python',
-    'nadesico',
-    'ocaml',
-    'lua',
-    'assembly'];
-
-  test("Test Case for Shiritori,play", (){
-    expect(S.play('cpp'), true);
-  });
-
-  test("Test Case for Shiritori.restart", (){
-    expect(S.restart(['basic',
-      "c",
-      'cpp',
-      'php',
-      'python',
-      'nadesico',
-      'ocaml',
-      'lua',
-      'assembly']), "game restarted");
+import 'main.dart';
+void main() {
+  Shiritori sOne = Shiritori();
+  test('Tests for Shiritori Class', () {
+    expect(sOne.play("basic"),true);
+    expect(sOne.play("c"),true);
+    expect(sOne.play("cpp"),true);
+    expect(sOne.play("python"),true);
+    expect(sOne.play("nadesico"),false);
+    expect(sOne.play("lua"),false);
+    expect(sOne.play("assembly"),false);
+    sOne.restart();
   });
 }
+
+
+
