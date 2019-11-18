@@ -22,25 +22,25 @@ class Shiritori {
   List<String> words = [];
   bool game_over = false;
 
-  bool play(String word) {
-
+  bool play(var word) {
     bool returnThis;
+    if (word == '' || !(word is String) ) {
+      returnThis = false;
+    } else
     //for first word, we don't have to check the list as its empty already, just return true
     if (words.isEmpty && !game_over) {
       words.add(word);
       returnThis = true;
-    }
-    else if(words.contains(word)){
+    } else if (words.contains(word)) {
       game_over = true;
       returnThis = false;
-    }
-    else if (words.isNotEmpty && !game_over) {
-      String firstOfWord = word[0];
+    } else if (words.isNotEmpty && !game_over) {
+      String firstOfWord = word[0].toLowerCase();
       String lastWord = words.last;
-      String lastOfPrevWord = lastWord[lastWord.length - 1];
+      String lastOfPrevWord = lastWord[lastWord.length - 1].toLowerCase();
 //      print('firstOfWord:$firstOfWord lastOfprevWord:$lastOfPrevWord');
-      if(!(firstOfWord==lastOfPrevWord)){
-        game_over=true;
+      if (!(firstOfWord == lastOfPrevWord)) {
+        game_over = true;
       }
       returnThis = (firstOfWord == lastOfPrevWord) && !words.contains(word);
       words.add(word);
