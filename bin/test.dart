@@ -1,11 +1,10 @@
 import 'package:test/test.dart';
-import 'package:test/test.dart';
 import 'package:test/test.dart' as prefix0;
 import 'main.dart';
 void main() {
   Shiritori sOne = Shiritori();
   test('Tests for Shiritori Class', () {
-    expect(sOne.game_over, false)
+    expect(sOne.game_over, false);
     expect(sOne.play("basic"),true);
     expect(sOne.play("c"),true);
     expect(sOne.play("cpp"),true);
