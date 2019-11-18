@@ -18,7 +18,7 @@
 
 class Shiritori{
 
-
+  List <String> words = [];
   bool play(String word){
 
   }
