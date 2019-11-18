@@ -14,9 +14,12 @@ void main() {
     expect(shiritori.play('elephant'), true);
     expect(shiritori.words.length, 3);
     expect(shiritori.play('lion'), false);// firsOfWord and lastOfPrevWord do not match,
+    expect(shiritori.words.length, 3);
     // game_over should be true now and this function should return false
     expect(shiritori.game_over, true);
     shiritori.restart();
+    expect(shiritori.words.isEmpty, true);
+    expect(shiritori.game_over, false);
     //----------------
     expect(shiritori.words.isEmpty, true);//in start lst should be empty
     expect(shiritori.play('hello'), true);
@@ -27,6 +30,9 @@ void main() {
     expect(shiritori.words.isEmpty, true);//after restart words should be empty again
     //---------------
     expect(shiritori.play('orange'), true);
+    expect(shiritori.game_over, false);
+    expect(shiritori.play('eorange'), true);
+    expect(shiritori.play('eorange'), false);
 
   });
 

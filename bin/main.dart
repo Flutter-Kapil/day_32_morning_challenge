@@ -22,31 +22,31 @@ class Shiritori {
   List<String> words = [];
   bool game_over = false;
 
-  bool play(var word) {
-    bool returnThis;
-    if (word == '' || !(word is String) ) {
-      returnThis = false;
-    } else
-    //for first word, we don't have to check the list as its empty already, just return true
-    if (words.isEmpty && !game_over) {
-      words.add(word);
-      returnThis = true;
-    } else if (words.contains(word)) {
-      game_over = true;
-      returnThis = false;
-    } else if (words.isNotEmpty && !game_over) {
-      String firstOfWord = word[0].toLowerCase();
-      String lastWord = words.last;
-      String lastOfPrevWord = lastWord[lastWord.length - 1].toLowerCase();
-//      print('firstOfWord:$firstOfWord lastOfprevWord:$lastOfPrevWord');
-      if (!(firstOfWord == lastOfPrevWord)) {
+  bool play(String word) {
+    if(!game_over) {
+      if (word == '' || !(word is String)) {
+        return false;
+      } else if (words.isEmpty ) {
+        words.add(word);
+        return true;
+      } else if(words.contains(word)){
         game_over = true;
+        return false;
       }
-      returnThis = (firstOfWord == lastOfPrevWord) && !words.contains(word);
-      words.add(word);
+      else {
+        String firstOfword = word[0].toLowerCase();
+        String lastOfPrevWord = words.last[words.last.length - 1].toLowerCase();
+        if (firstOfword == lastOfPrevWord) {
+          words.add(word);
+          return true;
+        }else{
+          game_over=true;
+          return false;
+        }
+      }
+    }else{
+      return false;
     }
-
-    return returnThis;
   }
 
   String restart() {
